@@ -1,0 +1,144 @@
+/* FONT Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/* IMAGES */
+
+#mainPic {
+    height: 15em;
+}
+
+/* Texts */
+
+p {
+    max-width: 50em;
+
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--headingOrContrast-color);
+}
+
+
+:root {
+    --vertical-space: 2rem;
+    --horizontal-space: 3rem;
+
+
+    --light-color: #F2EAE4;
+    --link-color: #734E38;
+    --headingOrContrast-color: #736F36;
+}
+
+a {
+    color: black;
+    text-decoration-color: var(--link-color);
+
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+    background-image: radial-gradient(circle at 82% 60%, rgba(59, 59, 59, 0.06) 0%, rgba(59, 59, 59, 0.06) 69%, transparent 69%, transparent 100%), radial-gradient(circle at 36% 0%, rgba(185, 185, 185, 0.06) 0%, rgba(185, 185, 185, 0.06) 59%, transparent 59%, transparent 100%), radial-gradient(circle at 58% 82%, rgba(183, 183, 183, 0.06) 0%, rgba(183, 183, 183, 0.06) 17%, transparent 17%, transparent 100%), radial-gradient(circle at 71% 32%, rgba(19, 19, 19, 0.06) 0%, rgba(19, 19, 19, 0.06) 40%, transparent 40%, transparent 100%), radial-gradient(circle at 77% 5%, rgba(31, 31, 31, 0.06) 0%, rgba(31, 31, 31, 0.06) 52%, transparent 52%, transparent 100%), radial-gradient(circle at 96% 80%, rgba(11, 11, 11, 0.06) 0%, rgba(11, 11, 11, 0.06) 73%, transparent 73%, transparent 100%), radial-gradient(circle at 91% 59%, rgba(252, 252, 252, 0.06) 0%, rgba(252, 252, 252, 0.06) 44%, transparent 44%, transparent 100%), radial-gradient(circle at 52% 82%, rgba(223, 223, 223, 0.06) 0%, rgba(223, 223, 223, 0.06) 87%, transparent 87%, transparent 100%), radial-gradient(circle at 84% 89%, rgba(160, 160, 160, 0.06) 0%, rgba(160, 160, 160, 0.06) 57%, transparent 57%, transparent 100%), linear-gradient(90deg, rgb(242, 234, 228), rgb(217, 203, 191));
+}
+
+/* layout */
+
+body {
+    display: grid;
+    grid-template-areas: "head head"
+        "nav nav"
+        "main main"
+        "foot foot";
+    grid-template-columns: 1fr 5fr;
+    /* fr is a fractional unit */
+    grid-template-rows: auto auto 1fr auto;
+}
+
+@media screen and (min-width: 25em) {
+    body {
+        grid-template-areas: "head head"
+            "nav main"
+            "foot foot";
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+}
+
+body>* {
+    /* all direct children of body */
+    padding-left: var(--horizontal-space);
+    padding-right: var(--horizontal-space);
+
+    /* all have the same padding not relative to the font size but the body default */
+}
+
+body>header {
+    grid-area: head;
+}
+
+body>nav {
+    grid-area: nav;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+body>main {
+    grid-area: main;
+}
+
+body>footer {
+    grid-area: foot;
+}
+
+body>nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+body>nav ul li {
+    display: inline;
+    padding-right: 1rem;
+}
+
+header,
+footer {
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--vertical-space);
+    /* rem is reletive to the parent */
+}
+
+header h1,
+footer h1 {
+    margin: 0;
+}
+
+/* Portfolio Page Flexbox! */
+
+body#portfolio ul#portfolioItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+
+}
+
+@media screen and (min-width: 25em) {
+
+    /* only applies on tablet size or above */
+    body#portfolio ul#portfolioItems li {
+        flex-basis: 48%;
+        padding-right: 2%;
+    }
+}
+
+body#portfolio ul#portfolioItems li img {
+    max-width: 100%;
+}
